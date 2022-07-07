@@ -26,7 +26,6 @@ FORMS += \
     principal.ui
 
 TRANSLATIONS += \
-    Calculadora_es_EC.ts \
     Calculadora_en.ts \
     Calculadora_ja.ts
 
