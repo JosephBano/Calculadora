@@ -11,7 +11,6 @@ Principal::Principal(QWidget *parent)
 Principal::~Principal()
 {
     delete ui;
-    ui->inOperation->addAction();
 }
 
 
@@ -30,20 +29,23 @@ void Principal::calcular()
     float num1 = ui->inNum1->value();
     float num2 = ui->inNum2->value();
 
-    double promedio;
+    double promedio = 0.0;
     switch(ui->inOperation->currentIndex()){
     case 0:
         promedio=num1+num2;
         break;
     case 1:
         promedio=num1-num2;
-
+        break;
     case 2:
         promedio=num1*num2;
+        break;
     case 3:
         promedio=num1/num2;
+        break;
     default:
+        break;
     }
-    QMessageBox::information(this, "Resultado",
-                             "El resultado es "+ QString::number(resultado))
+    QMessageBox::information(this, tr("Resultado"),
+                             tr("El resultado es: %1").arg(promedio));
 }
